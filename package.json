@@ -1,5 +1,5 @@
 {
-  "name": "lr-tablet",
+  "name": "lr-kaoyan-english-reading",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -8,22 +8,18 @@
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
     "android:add": "npx cap add android",
-    "android:sync": "npm run build && npx cap sync android",
-    "android:open": "npx cap open android"
+    "android:sync": "npm run build && npx cap sync android"
   },
   "dependencies": {
-    "@capacitor/android": "^7.4.3",
-    "@capacitor/core": "^7.4.3",
-    "docx": "^9.5.1",
-    "jspdf": "^3.0.3",
-    "jszip": "^3.10.1",
-    "pdfjs-dist": "^5.4.149",
-    "tesseract.js": "^6.0.1"
+    "@capacitor/android": "7.4.3",
+    "@capacitor/core": "7.4.3",
+    "jszip": "3.10.1",
+    "mammoth": "1.11.0",
+    "pdfjs-dist": "5.4.149"
   },
   "devDependencies": {
-    "@capacitor/cli": "^7.4.3",
-    "vite": "^7.2.2",
-    "vite-plugin-pwa": "^1.1.0"
+    "@capacitor/cli": "7.4.3",
+    "vite": "7.2.2",
+    "vite-plugin-pwa": "1.1.0"
   }
 }
-

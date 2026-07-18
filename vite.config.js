@@ -6,26 +6,26 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['icon.svg'],
+      includeAssets: ['icon.png'],
       manifest: {
-        name: 'LR 学习工作台',
-        short_name: 'LR',
-        description: '适配荣耀平板的本地学习、视频讲义与阅读工作台',
+        name: 'LR-考研英语真题特训（独家私人版）',
+        short_name: 'LR英语特训',
+        description: '为荣耀平板横屏优化的考研英语真题阅读训练、复盘与统计工具',
         lang: 'zh-CN',
-        theme_color: '#10182a',
-        background_color: '#f3f6fb',
+        theme_color: '#7665d8',
+        background_color: '#fffaf4',
         display: 'standalone',
-        orientation: 'any',
+        orientation: 'landscape',
         start_url: './',
         icons: [
-          { src: 'icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' }
+          { src: 'icon.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' }
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,woff2}'],
+        globPatterns: ['**/*.{js,css,html,png,svg,woff2}'],
         maximumFileSizeToCacheInBytes: 12 * 1024 * 1024
       }
     })
   ],
-  build: { target: 'es2022', sourcemap: false }
+  build: { target: 'es2022', sourcemap: false, chunkSizeWarningLimit: 1600 }
 })

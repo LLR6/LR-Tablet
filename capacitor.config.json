@@ -1,8 +1,10 @@
 {
-  "appId": "com.lr.study",
-  "appName": "LR",
+  "appId": "com.lr.kaoyan.englishreading",
+  "appName": "LR-考研英语真题特训（独家私人版）",
   "webDir": "dist",
   "server": { "androidScheme": "https" },
-  "android": { "allowMixedContent": false }
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#fffaf4"
+  }
 }
-
