@@ -42,7 +42,7 @@ Notably, tipping primarily benefits some of these workers, but not others such a
       { id:'25-2-22', number:22, prompt:"Compared with tips in the past, today's tips", options:{A:'are paid much less frequently.',B:'are less often requested in advance.',C:'have less to do with service quality.',D:"contribute less to workers' income."}, answer:'C', type:'对比题', evidence:'Today’s requests are often not connected to the salary and service norms; they may be requested beforehand.', explanation:'过去事后给小费可奖励优质服务，如今常在服务前索取，与服务质量的联系减弱，选 C。', trap:'B 与原文相反；A、D 没有依据。' },
       { id:'25-2-23', number:23, prompt:'Tip requests are creeping into new kinds of services as a result of', options:{A:'the advancement of technology.',B:'the desire for income increase.',C:'the diversification of business.',D:'the emergence of tipflation.'}, answer:'A', type:'因果题', evidence:'The prevalence of digital payment devices has made it easier to ask customers for a tip.', explanation:'数字支付设备降低了索要小费的门槛，直接推动小费进入新服务类型，选 A。', trap:'D 是金额上涨现象，不是“进入新服务”的直接原因。' },
       { id:'25-2-24', number:24, prompt:'The movement toward no-tipping services was intended to', options:{A:'promote consumption.',B:'enrich income sources.',C:'maintain reasonable prices.',D:'guarantee income fairness.'}, answer:'D', type:'目的题', evidence:'To ensure that all employees were paid fair wages, some restaurants banned tipping and increased prices.', explanation:'取消小费并涨价的明确目的，是让包括厨师、洗碗工在内的所有员工获得公平工资，选 D。', trap:'“涨价”是手段，不是为了维持低价或促进消费。' },
-      { id:'25-2-25', number:25, prompt:'It can be learned from the last paragraph that tipping', options:{A:'does not benefit service workers equally.',B:'helps encourage quality service.',C:'is vital to business development.',D:'reflects the need to reduce prices.'}, answer:'A', type:'推断题', evidence:'Tipping primarily benefits some workers, but not others such as cooks and dishwashers.', explanation:'末段直接说明不同岗位从小费制度中获益不均，选 A。', trap:'B 属于前文传统小费的作用；C、D 均偏离末段。' }
+      { id:'25-2-25', number:25, prompt:'It can be learned from the last paragraph that tipping', options:{A:'is becoming a burden for customers.',B:'helps encourage quality service.',C:'is vital to business development.',D:'reflects the need to reduce prices.'}, answer:'A', type:'推断题', evidence:'The movement toward no-tipping services has largely fizzled out, while tip creep and tipflation continue.', explanation:'取消小费、改由明码涨价来保障公平工资的尝试基本失败，消费者仍要面对不断扩张、上涨的小费要求，负担在加重，因此选 A。', trap:'B 是传统事后小费的作用，不是末段推论；C、D 均无依据。' }
     ]
   },
   {
@@ -92,4 +92,3 @@ HAPs should not just include short-term emergency responses, researchers say, bu
 ]
 
 export const QUESTION_TYPES = ['细节题','推断题','主旨题','词义句意题','态度题','例证题','因果题','对比题','观点题','目的题','实验目的题','案例题']
-
