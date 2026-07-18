@@ -1,75 +1,64 @@
-# LR Tablet
+# LR-考研英语真题特训（独家私人版）
 
-为荣耀平板 9 Pro / Android / MagicOS 设计的横屏触控学习工作台。与 Windows 端统一使用 `LR` 品牌。
+为荣耀平板 9 Pro / Android / MagicOS 横屏触控设计的考研英语阅读理解专用应用。
 
-## 功能
+## 首版功能
 
-- 视频智能换页、稳定画面选择、重复页过滤；
-- 截图分析频率和换页阈值可调；
-- 可选彩色笔迹处理和中英文 OCR；
-- Word、PDF、ZIP 导出，刷新后自动释放临时截图；
-- 学习计划、每日打卡和连续天数；
-- 本地单词导入与间隔复习；
-- 英语阅读左右分栏作答、计时、判分；
-- 触控思维导图和 SVG 导出；
-- 本地 PDF 查看、网盘一键跳转；
-- PWA 离线安装；
-- `LR数据_*.json` 与 Windows 端双向导入导出。
+- 横屏左右双栏：左侧文章与批注，右侧题目、选项和作答；
+- 内置 2025 英语一、英语二共 4 篇阅读、20 道题与逐题解析；
+- 限时训练、暂停、断点保存、交卷判分、阅读得分力测评；
+- 题型正确率、首练/反复练比例、日/周/月学习统计；
+- 学习完成量、每日/每周计划与连续训练天数；
+- 做题心结、题目思路笔记、文章三色高亮与批注；
+- PDF、DOCX、TXT、JSON、ZIP 导入，以及答案表补录；
+- 全量本地备份与恢复；
+- 本机离线保存，不上传试题和学习记录。
 
-## 在荣耀平板上安装 PWA
+## 导入说明
 
-1. 将 `dist` 部署到任意 HTTPS 静态站点，例如 GitHub Pages。
-2. 用荣耀浏览器、Chrome 或 Edge 打开地址。
-3. 浏览器菜单选择“添加到主屏幕”或“安装应用”。
-4. 安装完成后会出现独立的 LR 图标，可全屏启动。
+普通 PDF / DOCX / TXT 会先提取文字，再尝试识别 `Text 1`～`Text 4` 和每篇 5 道选择题。扫描版 PDF 若没有文本层，需要先 OCR。识别后可用 `21C 22A 23B ...` 的格式补充答案。
 
-PWA 的计划、单词、阅读和思维导图可离线使用。中英文 OCR 首次加载语言模型时需要联网。
+完整 JSON 可直接包含解析：
 
-## 构建 PWA
+```json
+{
+  "title": "2025 英语一 · Text 1",
+  "year": 2025,
+  "paper": "英语一",
+  "passage": "Article text...",
+  "questions": [
+    {
+      "number": 21,
+      "prompt": "Question...",
+      "options": {"A":"...","B":"...","C":"...","D":"..."},
+      "answer": "C",
+      "type": "细节题",
+      "explanation": "解析...",
+      "evidence": "定位句...",
+      "trap": "错误选项陷阱..."
+    }
+  ]
+}
+```
 
-在 Windows 双击 `Build_PWA.bat`，或运行：
+## 构建 APK
+
+GitHub Actions 工作流使用 Node.js 22、Java 21、Capacitor 7 和 Android SDK 构建。工作流产物名为 `LR-English-Reading-APK`，其中 `LR-KaoYan-English-v1.0.apk` 可直接安装到平板。
+
+本地调试：
 
 ```bash
 npm install
-npm run build
+npm run dev
 ```
 
-输出目录为 `dist`。
-
-## 构建 Android APK
-
-工程已经包含 Capacitor 配置和 GitHub Actions 工作流。把本目录作为 GitHub 仓库后，手动运行 `Build LR Tablet APK`，完成后下载 `LR-Tablet-Android` 构建产物，其中的 `app-debug.apk` 可安装到荣耀平板。
-
-本地使用 Android Studio 时：
+本地 Android 构建：
 
 ```bash
 npm install
 npm run build
 npx cap add android
 npx cap sync android
-npx cap open android
+node scripts/configure-android.mjs
+cd android && ./gradlew assembleDebug
 ```
-
-然后在 Android Studio 选择 Build APK。
-
-## 阅读 JSON 格式
-
-```json
-{
-  "title": "2025 英语阅读 Text 1",
-  "passage": "Article text...",
-  "questions": [
-    {
-      "number": 21,
-      "question": "What does the author suggest?",
-      "options": {"A": "...", "B": "...", "C": "...", "D": "..."},
-      "answer": "B"
-    }
-  ]
-}
-```
-
-## 隐私
-
-课程视频、取帧、计划、单词和阅读记录都在平板本机处理。应用不上传视频，不保存网盘密码。
-
