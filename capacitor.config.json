@@ -1,0 +1,8 @@
+{
+  "appId": "com.lr.study",
+  "appName": "LR",
+  "webDir": "dist",
+  "server": { "androidScheme": "https" },
+  "android": { "allowMixedContent": false }
+}
+
