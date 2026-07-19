@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "version": "2026.07.19.1",
-  "updatedAt": "2026-07-19T08:45:00Z",
+  "version": "2026.07.19.2",
+  "updatedAt": "2026-07-19T09:32:00Z",
   "minAppVersion": "2.4.0",
   "title": "LR考研云端题库",
   "packages": [
@@ -12,6 +12,54 @@
       "url": "banks/starter-20260719.json",
       "setCount": 3,
       "itemCount": 19
+    },
+    {
+      "id": "408-monthly-202511",
+      "title": "408·2025年11月月考",
+      "description": "数据结构月考选择题与解析",
+      "url": "banks/408-monthly-202511.json",
+      "setCount": 1,
+      "itemCount": 25
+    },
+    {
+      "id": "408-monthly-202512",
+      "title": "408·2025年12月月考",
+      "description": "计算机组成原理月考选择题与解析",
+      "url": "banks/408-monthly-202512.json",
+      "setCount": 1,
+      "itemCount": 25
+    },
+    {
+      "id": "408-monthly-202601",
+      "title": "408·2026年1月月考",
+      "description": "操作系统月考选择题与解析",
+      "url": "banks/408-monthly-202601.json",
+      "setCount": 1,
+      "itemCount": 18
+    },
+    {
+      "id": "408-monthly-202602",
+      "title": "408·2026年2月月考",
+      "description": "数据结构、计组与计网综合月考",
+      "url": "banks/408-monthly-202602.json",
+      "setCount": 1,
+      "itemCount": 20
+    },
+    {
+      "id": "408-monthly-202603",
+      "title": "408·2026年3月月考",
+      "description": "计算机网络月考选择题与解析",
+      "url": "banks/408-monthly-202603.json",
+      "setCount": 1,
+      "itemCount": 19
+    },
+    {
+      "id": "408-written-202601-202603",
+      "title": "408综合应用题·首批精练",
+      "description": "PV同步与CRC综合应用题",
+      "url": "banks/408-written-202601-202603.json",
+      "setCount": 1,
+      "itemCount": 2
     }
   ]
 }
