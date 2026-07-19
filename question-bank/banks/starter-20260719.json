@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "lr-starter-20260719",
+  "title": "LR云端首批题库",
+  "description": "用于验证联网同步的408、政治与英语专项原创练习。",
+  "sets": [
+    {
+      "id": "cloud-408-20260719-a",
+      "subject": "408",
+      "type": "mcq",
+      "title": "408云端同步·综合基础组",
+      "source": "原创模拟·云端校对",
+      "items": [
+        {"id":"c408-a1","stem":"若一棵完全二叉树共有127个结点，则其高度（根结点所在层为第1层）为","options":{"A":"6","B":"7","C":"8","D":"127"},"answer":"B","explanation":"满二叉树第7层结点总数为2^7-1=127，因此高度为7。","topic":"数据结构"},
+        {"id":"c408-a2","stem":"采用邻接矩阵存储含n个顶点的图，判断任意两顶点是否相邻的时间复杂度为","options":{"A":"O(1)","B":"O(log n)","C":"O(n)","D":"O(n²)"},"answer":"A","explanation":"邻接矩阵可直接访问矩阵元素A[i][j]。","topic":"数据结构"},
+        {"id":"c408-a3","stem":"在补码表示中，8位有符号整数可表示的范围是","options":{"A":"-127～127","B":"-128～127","C":"-128～128","D":"-255～255"},"answer":"B","explanation":"n位补码范围为-2^(n-1)至2^(n-1)-1。","topic":"计算机组成原理"},
+        {"id":"c408-a4","stem":"CPU执行一条指令时，通常首先进行的阶段是","options":{"A":"取指","B":"访存","C":"写回","D":"中断返回"},"answer":"A","explanation":"典型指令周期从取指开始，再译码和执行。","topic":"计算机组成原理"},
+        {"id":"c408-a5","stem":"发生进程切换时，下列内容通常必须保存的是","options":{"A":"进程的现场信息","B":"整个磁盘内容","C":"所有进程的页表","D":"网络中所有报文"},"answer":"A","explanation":"进程切换要保存程序计数器、寄存器等现场。","topic":"操作系统"},
+        {"id":"c408-a6","stem":"信号量S初值为3，执行两次P(S)操作且均成功后，S的值为","options":{"A":"1","B":"2","C":"3","D":"5"},"answer":"A","explanation":"P操作使信号量减1，两次后由3变为1。","topic":"操作系统"},
+        {"id":"c408-a7","stem":"IPv4首部中用于防止数据报在网络中无限循环的字段是","options":{"A":"TTL","B":"源端口","C":"窗口大小","D":"确认号"},"answer":"A","explanation":"TTL每经过一个路由器通常减1，为0时数据报被丢弃。","topic":"计算机网络"},
+        {"id":"c408-a8","stem":"在TCP可靠传输机制中，接收方通过确认号主要表示","options":{"A":"已收到的最后一个字节编号","B":"下一个期望收到的字节序号","C":"当前路由器编号","D":"应用进程编号"},"answer":"B","explanation":"TCP确认号表示接收方下一步期望收到的序号。","topic":"计算机网络"}
+      ]
+    },
+    {
+      "id": "cloud-politics-20260719-a",
+      "subject": "政治",
+      "type": "mcq",
+      "title": "政治云端同步·基础概念组",
+      "source": "原创模拟·稳定知识点",
+      "items": [
+        {"id":"cpol-a1","stem":"唯物辩证法认为，事物发展的根本原因在于","options":{"A":"事物内部矛盾","B":"外部偶然因素","C":"人的主观愿望","D":"抽象概念变化"},"answer":"A","explanation":"内因是事物变化发展的根据，外因通过内因起作用。","topic":"马克思主义基本原理"},
+        {"id":"cpol-a2","stem":"实践作为检验真理的唯一标准，根本上是由实践的哪一特点决定的","options":{"A":"主观性","B":"直接现实性","C":"重复性","D":"局部性"},"answer":"B","explanation":"实践能够把主观认识与客观结果联系起来，具有直接现实性。","topic":"马克思主义基本原理"},
+        {"id":"cpol-a3","stem":"五四运动爆发于","options":{"A":"1911年","B":"1919年","C":"1921年","D":"1927年"},"answer":"B","explanation":"五四运动发生于1919年。","topic":"中国近现代史纲要"},
+        {"id":"cpol-a4","stem":"中国共产党人的初心和使命是","options":{"A":"为中国人民谋幸福、为中华民族谋复兴","B":"发展私人资本","C":"实现闭关自守","D":"追求个人利益最大化"},"answer":"A","explanation":"这是党的初心和使命的规范表述。","topic":"新时代中国特色社会主义思想"},
+        {"id":"cpol-a5","stem":"社会主义核心价值观中，社会层面的价值取向是","options":{"A":"富强、民主、文明、和谐","B":"自由、平等、公正、法治","C":"爱国、敬业、诚信、友善","D":"创新、协调、绿色、开放"},"answer":"B","explanation":"自由、平等、公正、法治属于社会层面。","topic":"思想道德与法治"},
+        {"id":"cpol-a6","stem":"全面依法治国的根本遵循和行动指南是","options":{"A":"习近平法治思想","B":"经验主义","C":"历史虚无主义","D":"个人意志"},"answer":"A","explanation":"习近平法治思想是全面依法治国的根本遵循和行动指南。","topic":"思想道德与法治"}
+      ]
+    },
+    {
+      "id": "cloud-sentence-20260719-a",
+      "subject": "长难句",
+      "type": "sentence",
+      "title": "英语云端同步·长难句精拆组",
+      "source": "原创模拟·云端校对",
+      "items": [
+        {"id":"cls-a1","text":"Although access to information has expanded rapidly, the ability to distinguish reliable evidence from attractive but unsupported claims has not necessarily improved at the same pace.","reference":"尽管获取信息的渠道迅速扩展，但区分可靠证据与那些看似吸引人却缺乏支撑的说法的能力，并不一定以同样的速度提高。","analysis":"Although引导让步状语；主干是the ability has not improved；to distinguish...修饰ability；unsupported修饰claims。"},
+        {"id":"cls-a2","text":"What appears to be a simple choice between two options may in fact depend on assumptions that neither side has made explicit.","reference":"表面上看似只是两个选项之间的简单选择，实际上可能取决于双方都没有明确说出的假设。","analysis":"What从句作主语；主干may depend on assumptions；that引导定语从句修饰assumptions。"},
+        {"id":"cls-a3","text":"Researchers who focus only on average outcomes may overlook the fact that the same policy can affect different groups in sharply different ways.","reference":"只关注平均结果的研究者可能会忽视这样一个事实：同一项政策可能以截然不同的方式影响不同群体。","analysis":"who引导定语从句修饰Researchers；that引导同位语从句解释the fact。"},
+        {"id":"cls-a4","text":"The more frequently a learner retrieves an idea from memory, the more likely that idea is to remain available when it is needed in a new context.","reference":"学习者越频繁地从记忆中提取一个观点，这个观点在新情境中需要使用时就越可能保持可调用状态。","analysis":"the more..., the more...表示“越……越……”；when引导时间状语从句。"},
+        {"id":"cls-a5","text":"A system designed to reward visible activity can unintentionally discourage the quiet reflection on which high-quality decisions often depend.","reference":"一个旨在奖励可见活动的制度，可能会无意中抑制高质量决策常常依赖的安静反思。","analysis":"designed...为过去分词短语修饰system；on which引导定语从句修饰reflection。"}
+      ]
+    }
+  ]
+}
