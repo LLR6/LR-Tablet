@@ -16,13 +16,13 @@ manifest = manifest.replace(
 fs.writeFileSync(manifestPath, manifest)
 
 let strings = fs.readFileSync(stringsPath, 'utf8')
-strings = strings.replace(/<string name="app_name">[\s\S]*?<\/string>/, '<string name="app_name">LR-考研英语真题特训（独家私人版）</string>')
-strings = strings.replace(/<string name="title_activity_main">[\s\S]*?<\/string>/, '<string name="title_activity_main">LR-考研英语真题特训（独家私人版）</string>')
+strings = strings.replace(/<string name="app_name">[\s\S]*?<\/string>/, '<string name="app_name">LR-考研独门秘籍（私人独享至尊版）</string>')
+strings = strings.replace(/<string name="title_activity_main">[\s\S]*?<\/string>/, '<string name="title_activity_main">LR-考研独门秘籍（私人独享至尊版）</string>')
 fs.writeFileSync(stringsPath, strings)
 
 let gradle = fs.readFileSync(gradlePath, 'utf8')
-gradle = gradle.replace(/versionCode\s+\d+/, 'versionCode 1')
-gradle = gradle.replace(/versionName\s+"[^"]+"/, 'versionName "1.0.0"')
+gradle = gradle.replace(/versionCode\s+\d+/, 'versionCode 23')
+gradle = gradle.replace(/versionName\s+"[^"]+"/, 'versionName "2.3.0"')
 fs.writeFileSync(gradlePath, gradle)
 
 const densities = ['mdpi','hdpi','xhdpi','xxhdpi','xxxhdpi']
@@ -53,4 +53,4 @@ for (const entry of fs.readdirSync(resPath, { withFileTypes: true })) {
 }
 fs.copyFileSync(splashSource, path.join(splashTargetDir, 'splash.png'))
 
-console.log('Android name, version and tablet landscape orientation configured.')
+console.log('Android v2.3 name, version, icon and tablet orientation configured.')
