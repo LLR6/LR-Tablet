@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "version": "2026.07.19.1",
+  "updatedAt": "2026-07-19T08:45:00Z",
+  "minAppVersion": "2.4.0",
+  "title": "LR考研云端题库",
+  "packages": [
+    {
+      "id": "starter-20260719",
+      "title": "首批综合题库",
+      "description": "408、政治与长难句原创校对练习",
+      "url": "banks/starter-20260719.json",
+      "setCount": 3,
+      "itemCount": 19
+    }
+  ]
+}
