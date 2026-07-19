@@ -21,8 +21,8 @@ strings = strings.replace(/<string name="title_activity_main">[\s\S]*?<\/string>
 fs.writeFileSync(stringsPath, strings)
 
 let gradle = fs.readFileSync(gradlePath, 'utf8')
-gradle = gradle.replace(/versionCode\s+\d+/, 'versionCode 23')
-gradle = gradle.replace(/versionName\s+"[^"]+"/, 'versionName "2.3.0"')
+gradle = gradle.replace(/versionCode\s+\d+/, 'versionCode 24')
+gradle = gradle.replace(/versionName\s+"[^"]+"/, 'versionName "2.4.0"')
 fs.writeFileSync(gradlePath, gradle)
 
 const densities = ['mdpi','hdpi','xhdpi','xxhdpi','xxxhdpi']
@@ -53,4 +53,4 @@ for (const entry of fs.readdirSync(resPath, { withFileTypes: true })) {
 }
 fs.copyFileSync(splashSource, path.join(splashTargetDir, 'splash.png'))
 
-console.log('Android v2.3 name, version, icon and tablet orientation configured.')
+console.log('Android v2.4 name, version, icon and tablet orientation configured.')
