@@ -19,7 +19,11 @@ jobs:
         with:
           distribution: temurin
           java-version: "21"
-      - uses: android-actions/setup-android@v3
+      - name: Check Android SDK
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          ls "$ANDROID_HOME/platforms" | tail -5 || true
+          ls "$ANDROID_HOME/build-tools" | tail -5 || true
       - run: npm ci
       - run: npm run build
       - run: npx cap add android
@@ -34,4 +38,5 @@ jobs:
         with:
           name: LR-Pindou-APK
           path: LR-Pindou-v1.0.apk
+          if-no-files-found: error
           retention-days: 30
