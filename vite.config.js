@@ -8,14 +8,13 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['icon.png'],
       manifest: {
-        name: 'LR-考研英语真题特训（独家私人版）',
-        short_name: 'LR英语特训',
-        description: '为荣耀平板横屏优化的考研英语真题阅读训练、复盘与统计工具',
+        name: 'LR 拼豆',
+        short_name: 'LR拼豆',
+        description: '图片转拼豆网格、手动点豆、颜色统计与图纸导出的离线拼豆工具',
         lang: 'zh-CN',
-        theme_color: '#7665d8',
-        background_color: '#fffaf4',
+        theme_color: '#ff8fbe',
+        background_color: '#fff8fb',
         display: 'standalone',
-        orientation: 'landscape',
         start_url: './',
         icons: [
           { src: 'icon.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' }
