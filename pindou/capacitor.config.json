@@ -1,0 +1,9 @@
+{
+  "appId": "com.lr.pindou",
+  "appName": "LR拼豆",
+  "webDir": "dist",
+  "android": {
+    "allowMixedContent": false,
+    "captureInput": true
+  }
+}
