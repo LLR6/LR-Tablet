@@ -6,10 +6,26 @@
     <meta name="theme-color" content="#7665d8" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>LR-考研英语真题特训（独家私人版）</title>
+    <link rel="stylesheet" href="/vocab-extension.css" />
+    <link rel="stylesheet" href="/secret-extension.css" />
+    <link rel="stylesheet" href="/cloud-sync-v24.css" />
+    <title>LR-考研独门秘籍（私人独享至尊版）</title>
+    <script>
+      if (typeof Promise.withResolvers !== 'function') {
+        Promise.withResolvers = function () {
+          let resolve, reject
+          const promise = new Promise((res, rej) => { resolve = res; reject = rej })
+          return { promise, resolve, reject }
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/vocab-boot-guard.js"></script>
+    <script type="module" src="/vocab-extension.js"></script>
+    <script type="module" src="/secret-extension.js"></script>
+    <script type="module" src="/cloud-sync-v24.js"></script>
   </body>
 </html>
