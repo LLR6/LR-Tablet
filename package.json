@@ -16,7 +16,7 @@
     "@capacitor/android": "7.4.3",
     "@capacitor/core": "7.4.3",
     "jszip": "3.10.1",
-    "mammoth": "1.11.0",
+    "mammoth": "1.12.3",
     "pdfjs-dist": "5.4.149"
   },
   "devDependencies": {
