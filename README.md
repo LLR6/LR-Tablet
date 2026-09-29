@@ -1,5 +1,31 @@
 # LR-考研英语真题特训
 
+<!-- LR-LAB-CHROME:START -->
+<p align="center">
+  <a href="https://github.com/LLR6"><img alt="LR Lab" src="https://img.shields.io/badge/LR_LAB-0x4C52-0D1117?style=for-the-badge&logo=github&logoColor=white"></a>
+  <img alt="ANDROID / LEARNING" src="https://img.shields.io/badge/ANDROID_%2F_LEARNING-22C55E?style=for-the-badge">
+</p>
+
+<p align="center">
+  <strong>Read · Solve · Annotate · Review</strong><br>
+  <sub>Tablet-first, local-first reading practice</sub>
+</p>
+
+<p align="center">
+  <a href="https://github.com/LLR6/LR-Tablet/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/LLR6/LR-Tablet?style=flat-square&logo=github&label=stars"></a>
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/LLR6/LR-Tablet?style=flat-square">
+  <img alt="Maintained" src="https://img.shields.io/badge/status-active-success?style=flat-square">
+</p>
+
+<p align="center">
+  <a href="https://github.com/LLR6">Profile</a> ·
+  <a href="https://github.com/LLR6?tab=repositories">All projects</a> ·
+  <a href="https://github.com/LLR6/LR-Tablet/issues">Issues</a>
+</p>
+
+<!-- LR-LAB-CHROME:END -->
+
+
 > 面向 Android 平板横屏场景的本地优先考研英语阅读训练工具。重点解决“真题阅读、批注、计时、复盘和长期统计分散在不同工具里”的问题。
 
 [![Android](https://img.shields.io/badge/Android-Tablet-3DDC84?logo=android&logoColor=white)](https://developer.android.com/)
@@ -170,3 +196,13 @@ LR-Tablet/
 这个项目主要展示我在**需求拆解、平板交互设计、文件解析、本地数据管理、Android 打包和 CI 自动化**方面的工程实践。
 
 我更关注“把一个真实使用需求做成可以持续迭代的软件”，而不是只完成一次性的页面 Demo。
+
+<!-- LR-LAB-FOOTER:START -->
+---
+
+<p align="center">
+  <sub>Part of <a href="https://github.com/LLR6">LR Lab</a> · Security × AI × Android × Automation</sub><br>
+  <sub>Build things that are useful, inspectable, and reproducible.</sub>
+</p>
+<!-- LR-LAB-FOOTER:END -->
+
