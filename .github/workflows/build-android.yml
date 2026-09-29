@@ -9,6 +9,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -65,10 +69,28 @@ jobs:
       - name: Prepare APK
         run: cp android/app/build/outputs/apk/debug/app-debug.apk LR-KaoYan-English-v1.0.apk
 
+      - name: Generate APK provenance
+        shell: bash
+        run: |
+          sha256sum LR-KaoYan-English-v1.0.apk > LR-KaoYan-English-v1.0.apk.sha256
+          cat > build-metadata.json <<EOF
+          {
+            "schema": "lr-tablet-build/v1",
+            "commit": "${GITHUB_SHA}",
+            "ref": "${GITHUB_REF}",
+            "run_id": "${GITHUB_RUN_ID}",
+            "run_number": "${GITHUB_RUN_NUMBER}",
+            "artifact": "LR-KaoYan-English-v1.0.apk"
+          }
+          EOF
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: LR-English-Reading-APK
-          path: LR-KaoYan-English-v1.0.apk
+          path: |
+            LR-KaoYan-English-v1.0.apk
+            LR-KaoYan-English-v1.0.apk.sha256
+            build-metadata.json
           if-no-files-found: error
           retention-days: 30
