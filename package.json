@@ -12,7 +12,8 @@
     "validate:data": "node scripts/validate-question-bank.mjs",
     "test:backup": "node scripts/test-backup.mjs",
     "check:release": "node scripts/check-release-metadata.mjs",
-    "test:android-version": "node scripts/test-android-version.mjs"
+    "test:android-version": "node scripts/test-android-version.mjs",
+    "report:size": "node scripts/report-build-size.mjs"
   },
   "dependencies": {
     "@capacitor/android": "7.4.3",
