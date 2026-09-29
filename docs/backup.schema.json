@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LR-Tablet backup envelope",
+  "type": "object",
+  "required": [
+    "schema",
+    "app",
+    "exportedAt",
+    "data",
+    "dataSha256"
+  ],
+  "properties": {
+    "schema": {
+      "const": "lr-english-reading-backup/v2"
+    },
+    "app": {
+      "type": "string"
+    },
+    "exportedAt": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object"
+    },
+    "dataSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}
