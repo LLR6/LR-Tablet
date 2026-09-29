@@ -20,7 +20,7 @@
     "pdfjs-dist": "5.4.149"
   },
   "devDependencies": {
-    "@capacitor/cli": "7.4.3",
+    "@capacitor/cli": "8.5.2",
     "vite": "7.2.2",
     "vite-plugin-pwa": "1.1.0"
   },
