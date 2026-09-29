@@ -192,6 +192,8 @@ LR-Tablet/
 <!-- LR-CONTENT-UPGRADE-2:START -->
 ## 数据质量门禁
 
+数据格式与版本规则见 [docs/QUESTION_BANK_SCHEMA.md](docs/QUESTION_BANK_SCHEMA.md)。
+
 内置题库现在不是“写进 JS 就算完成”。
 
 新增：
