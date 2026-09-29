@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.1.0 - 2026-09-29
 
 ### Added
 - Built-in and cloud question-bank integrity validation.
