@@ -5,24 +5,10 @@
   <a href="https://github.com/LLR6"><img alt="LR Lab" src="https://img.shields.io/badge/LR_LAB-0x4C52-0D1117?style=for-the-badge&logo=github&logoColor=white"></a>
   <img alt="ANDROID / LEARNING" src="https://img.shields.io/badge/ANDROID_%2F_LEARNING-22C55E?style=for-the-badge">
 </p>
-
-<p align="center">
-  <strong>Read · Solve · Annotate · Review</strong><br>
-  <sub>Tablet-first, local-first reading practice</sub>
-</p>
-
-<p align="center">
-  <a href="https://github.com/LLR6/LR-Tablet/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/LLR6/LR-Tablet?style=flat-square&logo=github&label=stars"></a>
-  <img alt="Last commit" src="https://img.shields.io/github/last-commit/LLR6/LR-Tablet?style=flat-square">
-  <img alt="Maintained" src="https://img.shields.io/badge/status-active-success?style=flat-square">
-</p>
-
-<p align="center">
-  <a href="https://github.com/LLR6">Profile</a> ·
-  <a href="https://github.com/LLR6?tab=repositories">All projects</a> ·
-  <a href="https://github.com/LLR6/LR-Tablet/issues">Issues</a>
-</p>
-
+<p align="center"><strong>Read · Solve · Annotate · Review</strong><br><sub>Tablet-first, local-first reading practice</sub></p>
+<p align="center"><a href="https://github.com/LLR6/LR-Tablet/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/LLR6/LR-Tablet?style=flat-square&logo=github&label=stars"></a>
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/LLR6/LR-Tablet?style=flat-square"> <img alt="Maintained" src="https://img.shields.io/badge/status-active-success?style=flat-square"></p>
+<p align="center"><a href="https://github.com/LLR6">Profile</a> · <a href="https://github.com/LLR6?tab=repositories">All projects</a> · <a href="https://github.com/LLR6/LR-Tablet/issues">Issues</a></p>
 <!-- LR-LAB-CHROME:END -->
 
 
@@ -197,12 +183,9 @@ LR-Tablet/
 
 我更关注“把一个真实使用需求做成可以持续迭代的软件”，而不是只完成一次性的页面 Demo。
 
+
 <!-- LR-LAB-FOOTER:START -->
 ---
-
-<p align="center">
-  <sub>Part of <a href="https://github.com/LLR6">LR Lab</a> · Security × AI × Android × Automation</sub><br>
-  <sub>Build things that are useful, inspectable, and reproducible.</sub>
-</p>
+<p align="center"><sub>Part of <a href="https://github.com/LLR6">LR Lab</a> · Security × AI × Android × Automation</sub><br><sub>Build things that are useful, inspectable, and reproducible.</sub></p>
 <!-- LR-LAB-FOOTER:END -->
 
