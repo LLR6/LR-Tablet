@@ -41,6 +41,9 @@ jobs:
       - name: Validate built-in question bank
         run: npm run validate:data
 
+      - name: Test backup integrity
+        run: npm run test:backup
+
       - name: Build web application
         run: npm run build
 
