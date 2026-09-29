@@ -11,6 +11,11 @@
 <p align="center"><a href="https://github.com/LLR6">Profile</a> · <a href="https://github.com/LLR6?tab=repositories">All projects</a> · <a href="https://github.com/LLR6/LR-Tablet/issues">Issues</a></p>
 <!-- LR-LAB-CHROME:END -->
 
+<!-- LR-PROJECT-DOCS:START -->
+### Project docs
+[Architecture](./docs/ARCHITECTURE.md) · [Question-bank schema](./docs/QUESTION_BANK_SCHEMA.md) · [Engineering decisions](./docs/ENGINEERING_DECISIONS.md) · [Roadmap](./docs/ROADMAP.md) · [Releasing](./docs/RELEASING.md) · [Security](./SECURITY.md)
+<!-- LR-PROJECT-DOCS:END -->
+
 <!-- LR-SECOND-PASS:START -->
 <p align="center"><img src="./docs/media/hero.svg" alt="LR-Tablet — tablet-first local-first reading practice" width="100%"></p>
 <p align="center"><a href="#核心能力">Features</a> · <a href="#本地运行">Run locally</a> · <a href="./src">Source</a> · <a href="./.github/workflows/build-android.yml">Android CI</a></p>
