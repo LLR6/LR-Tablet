@@ -13,7 +13,7 @@
 
 <!-- LR-PROJECT-DOCS:START -->
 ### Project docs
-[Architecture](./docs/ARCHITECTURE.md) · [Question-bank schema](./docs/QUESTION_BANK_SCHEMA.md) · [Engineering decisions](./docs/ENGINEERING_DECISIONS.md) · [Roadmap](./docs/ROADMAP.md) · [Compatibility](./docs/COMPATIBILITY.md) · [Releasing](./docs/RELEASING.md) · [Security](./SECURITY.md) · [Support](./SUPPORT.md)
+[Architecture](./docs/ARCHITECTURE.md) · [Question-bank schema](./docs/QUESTION_BANK_SCHEMA.md) · [Data policy](./docs/DATA_POLICY.md) · [Engineering decisions](./docs/ENGINEERING_DECISIONS.md) · [Roadmap](./docs/ROADMAP.md) · [Compatibility](./docs/COMPATIBILITY.md) · [Releasing](./docs/RELEASING.md) · [Security](./SECURITY.md) · [Support](./SUPPORT.md)
 <!-- LR-PROJECT-DOCS:END -->
 
 <!-- LR-SECOND-PASS:START -->
