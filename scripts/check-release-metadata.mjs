@@ -1,35 +1,22 @@
 import { readFileSync } from 'node:fs'
 
-function read(path) {
-  return readFileSync(path, 'utf8')
-}
+const pkg = JSON.parse(readFileSync('package.json', 'utf8'))
+const citation = readFileSync('CITATION.cff', 'utf8')
+const changelog = readFileSync('CHANGELOG.md', 'utf8')
 
-const pkg = JSON.parse(read('package.json'))
-const version = pkg.version
-
-const citation = read('CITATION.cff')
-const citationMatch = citation.match(/^version:\s*["']?([^"'\n]+)["']?\s*$/m)
-if (!citationMatch) {
-  console.error('ERROR: CITATION.cff has no version')
-  process.exit(2)
-}
+const citationMatch = citation.match(/^version:\s*"?([^"\n]+)"?\s*$/m)
+if (!citationMatch) throw new Error('CITATION.cff has no version')
 const citationVersion = citationMatch[1].trim()
 
-const changelog = read('CHANGELOG.md')
-const escaped = version.replace(/[.*+?^$()|[\]\\{}]/g, '\\$&')
-const releaseHeading = new RegExp('^##\\s+' + escaped + '(?:\\s+-|\\s*$)', 'm')
+const releaseMatch = changelog.match(/^##\s+(\d+\.\d+\.\d+)\b/m)
+if (!releaseMatch) throw new Error('CHANGELOG.md has no released semantic version')
+const changelogVersion = releaseMatch[1]
 
-const errors = []
-if (citationVersion !== version) {
-  errors.push('CITATION.cff version ' + citationVersion + ' != package.json version ' + version)
+if (pkg.version !== citationVersion) {
+  throw new Error(`version mismatch: package.json=${pkg.version} citation=${citationVersion}`)
 }
-if (!releaseHeading.test(changelog)) {
-  errors.push('CHANGELOG.md has no release heading for ' + version)
-}
-
-if (errors.length) {
-  for (const error of errors) console.error('ERROR: ' + error)
-  process.exit(2)
+if (pkg.version !== changelogVersion) {
+  throw new Error(`version mismatch: package.json=${pkg.version} changelog=${changelogVersion}`)
 }
 
-console.log('release metadata consistent: ' + version)
+console.log(`release metadata consistent: ${pkg.version}`)
