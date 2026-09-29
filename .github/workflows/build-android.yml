@@ -48,6 +48,14 @@ jobs:
       - name: Test backup integrity
         run: npm run test:backup
 
+      - name: Check JavaScript syntax
+        run: |
+          node --check src/app.js
+          node --check src/data.js
+          node --check src/backup.js
+          node --check scripts/validate-question-bank.mjs
+          node --check scripts/configure-android.mjs
+
       - name: Build web application
         run: npm run build
 
@@ -67,12 +75,16 @@ jobs:
           ./gradlew assembleDebug --stacktrace
 
       - name: Prepare APK
-        run: cp android/app/build/outputs/apk/debug/app-debug.apk LR-KaoYan-English-v1.0.apk
+        shell: bash
+        run: |
+          APP_VERSION="$(node -p "JSON.parse(require('fs').readFileSync('package.json','utf8')).version")"
+          echo "APP_VERSION=${APP_VERSION}" >> "$GITHUB_ENV"
+          cp android/app/build/outputs/apk/debug/app-debug.apk "LR-KaoYan-English-v${APP_VERSION}.apk"
 
       - name: Generate APK provenance
         shell: bash
         run: |
-          sha256sum LR-KaoYan-English-v1.0.apk > LR-KaoYan-English-v1.0.apk.sha256
+          sha256sum LR-KaoYan-English-v${APP_VERSION}.apk > LR-KaoYan-English-v${APP_VERSION}.apk.sha256
           cat > build-metadata.json <<EOF
           {
             "schema": "lr-tablet-build/v1",
@@ -80,7 +92,7 @@ jobs:
             "ref": "${GITHUB_REF}",
             "run_id": "${GITHUB_RUN_ID}",
             "run_number": "${GITHUB_RUN_NUMBER}",
-            "artifact": "LR-KaoYan-English-v1.0.apk"
+            "artifact": "LR-KaoYan-English-v${APP_VERSION}.apk"
           }
           EOF
 
@@ -89,8 +101,8 @@ jobs:
         with:
           name: LR-English-Reading-APK
           path: |
-            LR-KaoYan-English-v1.0.apk
-            LR-KaoYan-English-v1.0.apk.sha256
+            LR-KaoYan-English-v${APP_VERSION}.apk
+            LR-KaoYan-English-v${APP_VERSION}.apk.sha256
             build-metadata.json
           if-no-files-found: error
           retention-days: 30
