@@ -53,6 +53,9 @@ jobs:
       - name: Check release metadata consistency
         run: npm run check:release
 
+      - name: Test Android version mapping
+        run: npm run test:android-version
+
       - name: Validate question-bank provenance and integrity
         run: npm run validate:data
 
@@ -67,6 +70,7 @@ jobs:
           npx cap add android
           npx cap sync android
           node scripts/configure-android.mjs
+          node scripts/verify-android-config.mjs
           cd android
           chmod +x gradlew
           ./gradlew assembleDebug --stacktrace
