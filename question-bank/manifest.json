@@ -11,7 +11,11 @@
       "description": "408、政治与长难句原创校对练习",
       "url": "banks/starter-20260719.json",
       "setCount": 3,
-      "itemCount": 19
+      "itemCount": 19,
+      "provenance": {
+        "kind": "original",
+        "sourceNote": "Original practice material maintained in this repository; not copied from a commercial question bank."
+      }
     }
   ]
 }
