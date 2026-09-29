@@ -68,6 +68,15 @@ jobs:
       - name: Build web application
         run: npm run build
 
+      - name: Report web bundle size
+        run: npm run report:size
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lr-tablet-build-size
+          path: build-size.json
+
       - name: Create Android project
         run: npx cap add android
 
