@@ -189,6 +189,31 @@ LR-Tablet/
 
 我更关注“把一个真实使用需求做成可以持续迭代的软件”，而不是只完成一次性的页面 Demo。
 
+<!-- LR-CONTENT-UPGRADE-2:START -->
+## 数据质量门禁
+
+内置题库现在不是“写进 JS 就算完成”。
+
+新增：
+
+```bash
+npm run validate:data
+```
+
+校验内容包括：
+
+- exercise ID 唯一；
+- question ID 唯一；
+- year 合法；
+- passage / prompt / type / evidence / explanation 非空；
+- 选项必须恰好包含 A / B / C / D；
+- answer 必须指向真实存在的选项。
+
+GitHub Actions 现在监听默认分支 `main`，并在 Web / Android 构建之前先运行题库校验。
+
+也就是说，一次错误的数据提交会在 APK 构建之前直接失败，而不是等到应用里才发现题目结构坏了。
+
+<!-- LR-CONTENT-UPGRADE-2:END -->
 
 <!-- LR-LAB-FOOTER:START -->
 ---
