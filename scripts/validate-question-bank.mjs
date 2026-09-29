@@ -7,6 +7,7 @@ const seenExercises = new Set()
 const seenQuestions = new Set()
 const seenCloudSets = new Set()
 const seenCloudItems = new Set()
+const allowedProvenanceKinds = new Set(['original', 'public-domain', 'licensed'])
 
 function fail(message) {
   errors.push(message)
@@ -22,6 +23,19 @@ function loadJson(url, label) {
   } catch (error) {
     fail(`${label}: cannot read valid JSON (${error.message})`)
     return null
+  }
+}
+
+function validateProvenance(value, where) {
+  if (!value || typeof value !== 'object') {
+    fail(`${where}: missing provenance object`)
+    return
+  }
+  if (!allowedProvenanceKinds.has(value.kind)) {
+    fail(`${where}.kind: must be original, public-domain, or licensed`)
+  }
+  if (!text(value.sourceNote)) {
+    fail(`${where}.sourceNote: missing source note`)
   }
 }
 
@@ -84,6 +98,7 @@ if (manifest) {
       else if (seenPackages.has(pkg.id)) fail(`${where}: duplicate id ${pkg.id}`)
       else seenPackages.add(pkg.id)
       if (!text(pkg?.title)) fail(`${where}: missing title`)
+      validateProvenance(pkg?.provenance, `${where}.provenance`)
       if (!text(pkg?.url)) {
         fail(`${where}: missing url`)
         continue
@@ -94,6 +109,7 @@ if (manifest) {
       if (!bank) continue
       if (bank.schemaVersion !== 1) fail(`${pkg.url}: unsupported schemaVersion`)
       if (!text(bank.id)) fail(`${pkg.url}: missing id`)
+      validateProvenance(bank?.provenance, `${pkg.url}.provenance`)
       if (!Array.isArray(bank.sets) || bank.sets.length === 0) {
         fail(`${pkg.url}: sets must be a non-empty array`)
         continue
@@ -109,6 +125,7 @@ if (manifest) {
         if (!text(set?.subject)) fail(`${setWhere}: missing subject`)
         if (!text(set?.type)) fail(`${setWhere}: missing type`)
         if (!text(set?.title)) fail(`${setWhere}: missing title`)
+        if (!text(set?.source)) fail(`${setWhere}: missing source`)
         if (!Array.isArray(set?.items) || set.items.length === 0) {
           fail(`${setWhere}: items must be a non-empty array`)
           continue
