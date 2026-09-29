@@ -11,7 +11,8 @@
     "android:sync": "npm run build && npx cap sync android",
     "validate:data": "node scripts/validate-question-bank.mjs",
     "test:backup": "node scripts/test-backup.mjs",
-    "check:release": "node scripts/check-release-metadata.mjs"
+    "check:release": "node scripts/check-release-metadata.mjs",
+    "test:android-version": "node scripts/test-android-version.mjs"
   },
   "dependencies": {
     "@capacitor/android": "7.4.3",
