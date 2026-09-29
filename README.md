@@ -11,6 +11,12 @@
 <p align="center"><a href="https://github.com/LLR6">Profile</a> · <a href="https://github.com/LLR6?tab=repositories">All projects</a> · <a href="https://github.com/LLR6/LR-Tablet/issues">Issues</a></p>
 <!-- LR-LAB-CHROME:END -->
 
+<!-- LR-SECOND-PASS:START -->
+<p align="center"><img src="./docs/media/hero.svg" alt="LR-Tablet — tablet-first local-first reading practice" width="100%"></p>
+<p align="center"><a href="#核心能力">Features</a> · <a href="#本地运行">Run locally</a> · <a href="./src">Source</a> · <a href="./.github/workflows/build-android.yml">Android CI</a></p>
+<!-- LR-SECOND-PASS:END -->
+
+
 
 > 面向 Android 平板横屏场景的本地优先考研英语阅读训练工具。重点解决“真题阅读、批注、计时、复盘和长期统计分散在不同工具里”的问题。
 
