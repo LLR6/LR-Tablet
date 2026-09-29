@@ -14,6 +14,7 @@
 <!-- LR-PROJECT-DOCS:START -->
 ### Project docs
 [Architecture](./docs/ARCHITECTURE.md) · [Question-bank schema](./docs/QUESTION_BANK_SCHEMA.md) · [Data policy](./docs/DATA_POLICY.md) · [Engineering decisions](./docs/ENGINEERING_DECISIONS.md) · [Roadmap](./docs/ROADMAP.md) · [Compatibility](./docs/COMPATIBILITY.md) · [Releasing](./docs/RELEASING.md) · [Security](./SECURITY.md) · [Support](./SUPPORT.md)
+ · [Change risk](./docs/CHANGE_RISK.md) · [Failure modes](./docs/FAILURE_MODES.md) · [Migrations](./docs/MIGRATIONS.md) · [Performance](./docs/PERFORMANCE.md)
 <!-- LR-PROJECT-DOCS:END -->
 
 <!-- LR-SECOND-PASS:START -->
