@@ -48,6 +48,9 @@ jobs:
       - name: Check release metadata consistency
         run: npm run check:release
 
+      - name: Test Android version mapping
+        run: npm run test:android-version
+
       - name: Validate built-in question bank
         run: npm run validate:data
 
@@ -73,6 +76,9 @@ jobs:
 
       - name: Apply tablet configuration
         run: node scripts/configure-android.mjs
+
+      - name: Verify generated Android configuration
+        run: node scripts/verify-android-config.mjs
 
       - name: Build debug APK
         working-directory: android
