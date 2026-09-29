@@ -120,3 +120,27 @@ Bad learning data often does not crash an app immediately. It creates subtler fa
 - a malformed question only breaks one screen later.
 
 The CI gate moves those failures closer to the commit that introduced them.
+
+
+## Provenance
+
+Committed cloud packages must declare:
+
+```json
+{
+  "provenance": {
+    "kind": "original",
+    "sourceNote": "Original practice material maintained in this repository."
+  }
+}
+```
+
+Allowed `kind` values for repository-distributed packages are:
+
+- `original`
+- `public-domain`
+- `licensed`
+
+Every set must also contain a non-empty `source` field.
+
+These rules are enforced by `npm run validate:data`. See [DATA_POLICY.md](./DATA_POLICY.md) for the repository's content and provenance policy.
