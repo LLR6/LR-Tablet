@@ -4,6 +4,7 @@ import * as pdfjs from 'pdfjs-dist'
 import pdfWorker from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 import { registerSW } from 'virtual:pwa-register'
 import { BUILTIN_EXERCISES } from './data.js'
+import { createBackupEnvelope, validateBackupEnvelope, validateStoreShape } from './backup.js'
 
 pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker
 registerSW({ immediate: true })
@@ -530,12 +531,35 @@ function editAnswerKey(id) {
   $('#save-key').onclick=()=>{const keys=parseAnswerKey($('#key-value').value);e.questions.forEach(q=>{if(keys[q.number])q.answer=keys[q.number]});save();closeModal();toast('答案已保存');renderBank()}
 }
 
-function exportBackup() {
-  const blob=new Blob([JSON.stringify({app:'LR-考研英语真题特训（独家私人版）',exportedAt:new Date().toISOString(),data:db},null,2)],{type:'application/json'})
-  download(blob,`LR英语特训_备份_${today()}.json`)
+async function exportBackup() {
+  try {
+    const envelope=await createBackupEnvelope(db)
+    const blob=new Blob([JSON.stringify(envelope,null,2)],{type:'application/json'})
+    download(blob,`LR英语特训_备份_${today()}.json`)
+    toast('备份已导出并写入 SHA-256 完整性摘要')
+  } catch (error) {
+    toast(`备份导出失败：${error.message}`)
+  }
 }
 function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
-async function importBackup(event){const file=event.target.files[0];if(!file)return;try{const value=JSON.parse(await file.text()),data=value.data||value;if(!data.attempts||!data.customExercises)throw new Error('不是有效的 LR 英语特训备份');if(confirm('恢复备份会替换本机现有记录，是否继续？')){db={...structuredClone(defaults),...data,plan:{...defaults.plan,...data.plan},settings:{...defaults.settings,...data.settings}};save();toast('备份已恢复');renderBank()}}catch(error){toast(error.message)}}
+async function importBackup(event){
+  const file=event.target.files[0]
+  if(!file)return
+  try{
+    const value=JSON.parse(await file.text())
+    const checked=await validateBackupEnvelope(value)
+    const data=validateStoreShape(checked.data)
+    const integrityText=checked.integrity==='verified'
+      ? 'SHA-256 完整性校验通过'
+      : '旧版备份：无完整性摘要，将按兼容模式恢复'
+    if(confirm(`${integrityText}。恢复备份会替换本机现有记录，是否继续？`)){
+      db={...structuredClone(defaults),...data,plan:{...defaults.plan,...data.plan},settings:{...defaults.settings,...data.settings}}
+      save()
+      toast(checked.integrity==='verified'?'备份已验证并恢复':'旧版备份已恢复')
+      renderBank()
+    }
+  }catch(error){toast(error.message)}
+}
 
 function showSettings() {
   modal(`<h3>显示与训练设置</h3><p>设置会自动保存在这台平板。</p><div class="field"><label>界面配色</label><select id="set-theme"><option value="cream" ${db.settings.theme==='cream'?'selected':''}>奶油紫（默认）</option><option value="mint" ${db.settings.theme==='mint'?'selected':''}>清新薄荷</option><option value="lilac" ${db.settings.theme==='lilac'?'selected':''}>轻柔丁香</option></select></div><div class="field"><label>文章字号：<span id="font-value">${db.settings.fontSize}px</span></label><input id="set-font" type="range" min="14" max="26" value="${db.settings.fontSize}"></div><label class="check-row"><input id="set-timer" type="checkbox" ${db.settings.timer?'checked':''}> 做题时显示计时器</label><div class="toolbar" style="margin-top:17px"><button class="btn primary" id="save-settings">保存设置</button><button class="btn" id="cancel-modal">取消</button></div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><p>应用名称：LR-考研英语真题特训（独家私人版）<br>数据位置：仅本机存储，不上传试题和学习记录。</p>`)
