@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite the repository."
+title: "LR-Tablet"
+type: software
+authors:
+  - family-names: "LLR6"
+repository-code: "https://github.com/LLR6/LR-Tablet"
+url: "https://github.com/LLR6/LR-Tablet"
+version: "1.1.0"
+date-released: "2026-09-29"
+license: "MIT"
