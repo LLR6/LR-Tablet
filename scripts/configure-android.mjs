@@ -1,10 +1,14 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { androidVersionCode } from './android-version.mjs'
 
 const manifestPath = path.resolve('android/app/src/main/AndroidManifest.xml')
 const stringsPath = path.resolve('android/app/src/main/res/values/strings.xml')
 const gradlePath = path.resolve('android/app/build.gradle')
 const resPath = path.resolve('android/app/src/main/res')
+const packageJson = JSON.parse(fs.readFileSync(path.resolve('package.json'), 'utf8'))
+const appVersion = packageJson.version
+const appVersionCode = androidVersionCode(appVersion)
 
 let manifest = fs.readFileSync(manifestPath, 'utf8')
 manifest = manifest.replace(
@@ -21,8 +25,8 @@ strings = strings.replace(/<string name="title_activity_main">[\s\S]*?<\/string>
 fs.writeFileSync(stringsPath, strings)
 
 let gradle = fs.readFileSync(gradlePath, 'utf8')
-gradle = gradle.replace(/versionCode\s+\d+/, 'versionCode 1')
-gradle = gradle.replace(/versionName\s+"[^"]+"/, 'versionName "1.0.0"')
+gradle = gradle.replace(/versionCode\s+\d+/, `versionCode ${appVersionCode}`)
+gradle = gradle.replace(/versionName\s+"[^"]+"/, `versionName "${appVersion}"`)
 fs.writeFileSync(gradlePath, gradle)
 
 const densities = ['mdpi','hdpi','xhdpi','xxhdpi','xxxhdpi']
@@ -53,4 +57,4 @@ for (const entry of fs.readdirSync(resPath, { withFileTypes: true })) {
 }
 fs.copyFileSync(splashSource, path.join(splashTargetDir, 'splash.png'))
 
-console.log('Android name, version and tablet landscape orientation configured.')
+console.log(`Android configured: versionName=${appVersion}, versionCode=${appVersionCode}, orientation=sensorLandscape`)
