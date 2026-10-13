@@ -18,8 +18,8 @@
   "dependencies": {
     "@capacitor/android": "7.4.3",
     "@capacitor/core": "7.4.3",
-    "jszip": "3.10.1",
-    "mammoth": "1.11.0",
+    "jszip": "3.10.2",
+    "mammoth": "1.13.0",
     "pdfjs-dist": "5.4.149"
   },
   "devDependencies": {
